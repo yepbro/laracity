@@ -5,10 +5,13 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
+use App\Http\Controllers\Public;
 
-Route::get('/', function () {
+Route::get('/', Public\HomeController::class)->name('public.home');
+
+Route::get('/welcome', function () {
     return view('welcome');
-})->name('home');
+})->name('welcome');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
