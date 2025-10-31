@@ -31,6 +31,7 @@ class DetectLocale
     {
         /** @var array<string, string> $domains */
         $domains = config()->array('localization.domains');
+
         /** @var array<string, string> $domainLocaleMap */
         $domainLocaleMap = array_flip($domains);
 
