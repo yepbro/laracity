@@ -16,8 +16,8 @@ class DomainRouteServiceProvider extends ServiceProvider
             $domain = config()->string("localization.domains.{$locale}");
 
             if ($domain) {
-                $urlGenerator->useOrigin("https://{$domain}");
-                $urlGenerator->useAssetOrigin("https://{$domain}");
+                $urlGenerator->useOrigin("//{$domain}");
+                $urlGenerator->useAssetOrigin("//{$domain}");
             }
 
             return $urlGenerator;
